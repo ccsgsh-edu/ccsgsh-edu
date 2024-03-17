@@ -55,7 +55,7 @@ window.addEventListener("load", () => {
     setTimeout(() =>{
         const container = document.querySelector('.container23');
         container.classList.add('container23--hidden');
-    }, 500);
+    }, 2000);
 
     var name = 'Test name';
     var gender = 'M';
