@@ -65,7 +65,8 @@ window.addEventListener("load", () => {
     var courseResult = '<<COURSE RESULT HERE>'
     var result = '<<RESULT HERE>>';
     var audio = document.getElementById("bg-music");
-    var shuffledQuestions = shuffleArray(ccsQuestions.slice(0, 30)); // Shuffled copy of the questions array
+    var numberOfQuestions = 30;
+    var shuffledQuestions = shuffleArray(ccsQuestions.slice(0, numberOfQuestions)); // Shuffled copy of the questions array
     var userAnswers = []; // Array to store user's answers
     // Get the forms we want to add validation styles to
     var forms = document.getElementsByClassName('needs-validation');
