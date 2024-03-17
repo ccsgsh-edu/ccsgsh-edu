@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>College Course Select in Guiding Senior High School Students</title>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "gRAcqnOJVhVhXnu-h",
+            });
+        })();
+        </script>
+    </head>
+    <body id="page-top">
+        <div class="bg-secondary container23">
+            <div class="text">
+                <h1>Are you ready to find out which Course and School fits to you?</h1>
+            </div>
+            <div class="loading">
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">College Course Select in Guiding Senior High School Students</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            </div>
+        </nav>
+        <!-- Contact-->
+        <section class="page-section" id="main">
+            <div class="container px-3 px-lg-5" id="mainContainer">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                        <div class="col-lg-8 align-self-end">
+                            <h2 class="text-white font-weight-bold">Before we dive in, can we get your name and some informations?</h2>
+                            <hr class="divider" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+                        <form action="#" class="needs-validation">
+                            <div class="form-group">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
+                                    <label for="name">Type your name here...</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+                                    <label for="email">Type your email address here...</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <div class="btn-group dropend">
+                                        <select id='gender' class='form-control' required>
+                                            <option value="" disabled hidden selected>Select your gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-3 px-lg-5" id="welcomeContainer" style="display: none;">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                        <div class="col-lg-8 align-self-end">
+                            <div class="image-container">
+                                <img src="assets/img/hi-m.png" alt="image" id="avatarMale" style="display: none;">
+                                <img src="assets/img/hi-f.png" alt="image" id="avatarFemale" style="display: none;">
+                                <div class="overlay-text">
+                                    <h1 class="text-white font-weight-bold" style="font-size: 4.5rem;">...Hi,</h1>
+                                </div>
+                                <div class="sub-overlay-text">
+                                    <h1 class="text-white font-weight-bold text-uppercase" id="namelbl" style="font-size: 2.5rem;">NAME HERE</h1>
+                                </div>
+                            </div>
+                            <h3 class="text-white font-weight-bold">We'll send your result on your email for safekeeping.</h3>
+                            <h1 class="text-white font-weight-bold">Let's start.</h1>
+                            <hr class="divider" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+                        <div class="d-grid"><button class="btn btn-primary btn-xl" id="readyBtn" type="button">I'm ready!</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-3 px-lg-5" id="questionContainer" style="display: none;">
+                <div class="container-fluid p-0 ">
+                    <div class="row g-0">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8 col-sm-10 bg-primary justify-content-center b-radius-lg">
+                            <div id="quiz" class="quiz-container mt-sm-4 mx-sm-4"></div>
+                            <div class="mt-sm-4 mx-sm-4 text-center">
+                                <div id="error" class="alert alert-warning" role="alert" style="display: none;">
+                                    Please choose an answer.
+                                </div>
+                                <button class="btn btn-light btn-xl my-sm-2" id="nextBtn" type="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="modalBtn" class="btn-light btn-xl my-sm-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" hidden>Modal Button </button>
+        </section>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalNamelbl">Thank You!</h1>
+                </div>
+                <div class="modal-body">
+                    <p>Your result has been sent to your email.</p>
+                    <div class="tempScore"></div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modalCloseBtn">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <audio id="bg-music" loop>
+            <source src="assets/sound/bg-music.mp3" type="audio/mpeg">
+            My BG music
+        </audio>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/questions.js"></script>
+        <script src="js/result.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    </body>
+</html>
