@@ -168,6 +168,7 @@ window.addEventListener("load", () => {
         var questionHTML = `
         <div class="question">
             <h2 class="text-white mt-0 text-center">${question.question}</h2>
+            <p class="text-white-75 mb-4 text-center">${currentQuestionIndex + 1}/${numberOfQuestions}
             <hr class="divider divider-light" />
             <div class="frb-group">
             ${choices.join('')}
